@@ -1,0 +1,14 @@
+.place {
+    display: grid;
+    position: relative;
+    grid-template-columns: minmax(190px, 1fr) 62px;
+    grid-template-rows: 1fr 37px 37px;
+    list-style-type: none;
+    background-color: #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    align-items: stretch;
+    justify-items: stretch;
+    column-gap: 30px;
+}

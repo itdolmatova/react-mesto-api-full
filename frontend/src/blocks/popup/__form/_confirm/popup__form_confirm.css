@@ -1,0 +1,14 @@
+.popup__form_confirm {
+    margin: 0;
+    padding: 36px 36px 38px;
+    min-height: 181px;
+    width: 430px;
+}
+
+@media screen and (max-width: 767px) {
+    .popup__form_confirm {
+        width: 282px;
+        min-height: 150px;
+        padding: 25px 22px;
+    }
+}

@@ -1,0 +1,11 @@
+.header__closeButton {
+    color: #A9A9A9;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.21;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: #000;
+}

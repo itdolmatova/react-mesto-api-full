@@ -1,0 +1,16 @@
+.place__likesCounter {
+    grid-row: 3;
+    grid-column: 2/3;
+    align-self: flex-start;
+    justify-self: center;
+    /*width: 13px;
+    height: 13px;*/
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.23;
+    color: #000000;
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+    padding: 0;
+}

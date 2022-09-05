@@ -1,0 +1,21 @@
+.register__input {
+    color: #CCC;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.21;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-style: 2px solid #CCCCCC;
+    margin: 0; 
+    padding: 30px 0 13px;
+    background-color: #000;
+}
+
+@media screen and (max-width: 767px) {
+    .register__input {
+        font-size: 14px;
+        line-height: 1.21;
+    }
+}
