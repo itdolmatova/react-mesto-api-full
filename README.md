@@ -38,7 +38,7 @@
 
 Текущая версия сайта опубликована по адресу:
 [Ссылка на сайт на GitHub.com](https://github.com/itdolmatova/react-mesto-api-full.git)
-IP-адрес сервера: 51.250.18.217
+IP-адрес сервера: 84.252.141.153
 
 Сайт построен по макетам в графическом редакторе "Фигма" 
 [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1 , 
