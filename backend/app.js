@@ -15,12 +15,37 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { PORT = 3000 } = process.env;
 const app = express();
+const allowedCors = [
+  'https://place4orthebeauty.dolmatova.nomoredomains.sbs',
+  'http://place4orthebeauty.dolmatova.nomoredomains.sbs',
+  'localhost:3000',
+];
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb')
   .then(() => console.log('Database Connected'), {
     autoIndex: true,
   })
   .catch((err) => console.log(err));
+
+app.use((req, res, next) => {
+  const { origin } = req.headers;
+  if (allowedCors.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+  }
+
+  const { method } = req;
+  const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
+
+  // Если это предварительный запрос, добавляем нужные заголовки
+  if (method === 'OPTIONS') {
+    const requestHeaders = req.headers['access-control-request-headers'];
+    res.header('Access-Control-Allow-Headers', requestHeaders);
+    res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
+    return res.end();
+  }
+
+  return next();
+});
 
 app.use(bodyParser.json()); // для собирания JSON-формата
 app.use(bodyParser.urlencoded({ extended: true })); // для приёма веб-страниц внутри POST-запроса
