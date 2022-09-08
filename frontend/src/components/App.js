@@ -51,7 +51,7 @@ function App() {
     if (token) {
       auth.getUser().then((res) => {
         setIsLoggedIn(true);
-        setUserData(res.data);
+        setUserData(res);
         history.push('/cards');
       }).catch(err => console.log(err));
     }

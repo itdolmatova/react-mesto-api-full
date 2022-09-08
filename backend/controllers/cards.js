@@ -6,11 +6,11 @@ const { WrongUserError } = require('../errors/wrong-user-error');
 
 const extractCard = (card) => {
   const {
-    createdAt, link, likes, owner, _id,
+    createdAt, link, likes, owner, _id, name,
   } = card;
   const likers = likes ? likes.map((user) => extractUser(user)) : likes;
   return {
-    createdAt, link, likes: likers, owner: (owner ? extractUser(owner) : null), _id,
+    createdAt, name, link, likes: likers, owner: (owner ? extractUser(owner) : null), _id,
   };
 };
 
