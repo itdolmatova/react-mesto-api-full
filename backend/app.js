@@ -20,6 +20,7 @@ const allowedCors = [
   'http://place4orthebeauty.dolmatova.nomoredomains.sbs',
   'http://localhost:3000',
 ];
+require('dotenv').config();
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb')
   .then(() => console.log('Database Connected'), {
@@ -51,6 +52,13 @@ app.use(bodyParser.json()); // для собирания JSON-формата
 app.use(bodyParser.urlencoded({ extended: true })); // для приёма веб-страниц внутри POST-запроса
 
 app.use(requestLogger);
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 app.post('/signin', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),

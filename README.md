@@ -1,8 +1,17 @@
-# react-mesto-api-full 
-## Проект Mesto фронтенд + бэкенд
+# Проект Mesto фронтенд + бэкенд (react-mesto-api-full)
 Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями. Бэкенд расположен в директории `backend/`, а фронтенд - в `frontend/`. 
   
 ------
+
+## Ссылки
+
+Текущая версия сайта опубликована по адресу:
+https://place4orthebeauty.dolmatova.nomoredomains.sbs
+IP-адрес сервера: 84.252.141.153
+
+Сайт построен по макетам в графическом редакторе "Фигма" 
+[Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1 , 
+https://www.figma.com/file/5H3gsn5lIGPwzBPby9jAOo/Sprint-14-RU?node-id=0%3A1 , https://www.figma.com/file/5H3gsn5lIGPwzBPby9jAOo/Sprint-14-RU?node-id=0%3A1)
 
 ## Описание проекта
 ### Фронтенд 
@@ -33,13 +42,3 @@
 `/routes` — папка с файлами роутеров;  
 `/controllers` — папка с файлами контроллеров пользователя и карточки; 
 `/models` — папка с файлами описания схем пользователя и карточки;
-
-## Ссылки
-
-Текущая версия сайта опубликована по адресу:
-[Ссылка на сайт на GitHub.com](https://github.com/itdolmatova/react-mesto-api-full.git)
-IP-адрес сервера: 84.252.141.153
-
-Сайт построен по макетам в графическом редакторе "Фигма" 
-[Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1 , 
-https://www.figma.com/file/5H3gsn5lIGPwzBPby9jAOo/Sprint-14-RU?node-id=0%3A1 , https://www.figma.com/file/5H3gsn5lIGPwzBPby9jAOo/Sprint-14-RU?node-id=0%3A1)
