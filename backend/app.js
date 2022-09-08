@@ -18,7 +18,7 @@ const app = express();
 const allowedCors = [
   'https://place4orthebeauty.dolmatova.nomoredomains.sbs',
   'http://place4orthebeauty.dolmatova.nomoredomains.sbs',
-  'localhost:3000',
+  'http://localhost:3000',
 ];
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb')
