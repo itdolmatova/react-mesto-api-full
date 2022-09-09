@@ -84,7 +84,7 @@ class Api {
 }
 
 const api = new Api({
-    baseUrl: 'http://api.place4orthebeauty.dolmatova.nomoredomains.sbs',
+    baseUrl: '//api.place4orthebeauty.dolmatova.nomoredomains.sbs',
     headers: {
       "Authorization": `Bearer ${localStorage.getItem('token')}`,
       'Content-Type': 'application/json'

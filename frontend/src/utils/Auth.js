@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://api.place4orthebeauty.dolmatova.nomoredomains.sbs';
+export const BASE_URL = '//api.place4orthebeauty.dolmatova.nomoredomains.sbs';
 
 function checkResponse(res) {
   if (res.ok) {
