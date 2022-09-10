@@ -8,7 +8,6 @@ const { NotFoundError } = require('../errors/not-found-error');
 const { EmailAlreadyExistError } = require('../errors/email-already-exist-error');
 
 function extractUser(user) {
-  console.log(user);
   const {
     _id, email,
   } = user;

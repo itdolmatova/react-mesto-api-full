@@ -1,3 +1,4 @@
+const { NODE_ENV, JWT_SECRET } = process.env;
 const jwt = require('jsonwebtoken');
 const { WrongEmailOrPasswordError } = require('../errors/wrong-email-or-password-error');
 
@@ -15,10 +16,12 @@ module.exports = (req, res, next) => {
 
   try {
     // попытаемся верифицировать токен
-    payload = jwt.verify(token, 'some-secret-key');
+    payload = jwt.verify(
+      token,
+      NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
+    );
   } catch (err) {
     // отправим ошибку, если не получилось
-    console.log(err);
     throw new WrongEmailOrPasswordError('Необходима авторизация');
   }
 
