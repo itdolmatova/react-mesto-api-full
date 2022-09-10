@@ -34,28 +34,41 @@ function App() {
   const [userData, setUserData] = useState({});
   const history = useHistory();
 
+  
   React.useEffect(() => {
-    api.getUserInfo().then(user => {
-      setCurrentUser(user);
-    }).catch(err => console.log(err));
-  }, [])
-
-  React.useEffect(() => {
-    api.getCards().then(cards => {
-      setCards(cards);
-    }).catch(err => console.log(err));
-  }, [])
-
-  React.useEffect(() => {
+    console.log("effect token");
     const token = localStorage.getItem('token');
     if (token) {
       auth.getUser().then((res) => {
         setIsLoggedIn(true);
         setUserData(res);
+        setCurrentUser(res);
+        console.log("effect token  " + res);
         history.push('/cards');
       }).catch(err => console.log(err));
     }
   }, [])
+
+  React.useEffect(() => {
+    if (isLoggedIn) {
+    console.log("effect user");
+    api.getUserInfo().then(user => {
+      setCurrentUser(user);
+      setUserData(user);
+      console.log("effect user  " + user);
+    }).catch(err => console.log(err));
+  }
+  }, [isLoggedIn])
+
+
+  React.useEffect(() => {
+    if (isLoggedIn) {
+    console.log("effect cards");
+    api.getCards().then(cards => {
+      setCards(cards);
+    }).catch(err => console.log(err));
+  }
+  }, [isLoggedIn])
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
