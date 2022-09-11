@@ -21,7 +21,7 @@ class Api {
     postUserInfo(values) {
         return fetch(this._baseUrl + '/users/me', {
             method: 'PATCH',
-            headers: _getHeaders(),
+            headers: this._getHeaders(),
             body: JSON.stringify (values)
         })
             .then(this._checkResponse);
@@ -29,14 +29,14 @@ class Api {
 
     getUserInfo() {
         return fetch(this._baseUrl + '/users/me', {
-            headers: _getHeaders(),
+            headers: this._getHeaders(),
         })
             .then(this._checkResponse);
     }
 
     getCards() {
         return fetch(this._baseUrl + '/cards', {
-            headers: _getHeaders(),
+            headers: this._getHeaders(),
         })
             .then(this._checkResponse);
     }
@@ -44,7 +44,7 @@ class Api {
     postCard(name, link) {
         return fetch(this._baseUrl + '/cards', {
             method: 'POST',
-            headers: _getHeaders(),
+            headers: this._getHeaders(),
             body: JSON.stringify({
                 name: name,
                 link: link
@@ -55,7 +55,7 @@ class Api {
     deleteCard(cardId) {
         return fetch(this._baseUrl + '/cards/' + cardId, {
             method: 'DELETE',
-            headers: _getHeaders(),
+            headers: this._getHeaders(),
         })
             .then(this._checkResponse);
     }
@@ -63,7 +63,7 @@ class Api {
     editAvatar(src) {
         return fetch(this._baseUrl + '/users/me/avatar', {
             method: 'PATCH',
-            headers: _getHeaders(),
+            headers: this._getHeaders(),
             body: JSON.stringify({
                 avatar: src
             })
@@ -74,7 +74,7 @@ class Api {
     setLike(cardId) {
         return fetch(this._baseUrl + `/cards/${cardId}/likes`, {
             method: 'PUT',
-            headers: _getHeaders(),
+            headers: this._getHeaders(),
         })
             .then(this._checkResponse);
     }
@@ -82,7 +82,7 @@ class Api {
     deleteLike(cardId) {
         return fetch(this._baseUrl + `/cards/${cardId}/likes`, {
             method: 'DELETE',
-            headers: _getHeaders(),
+            headers: this._getHeaders(),
         })
             .then(this._checkResponse);
     }

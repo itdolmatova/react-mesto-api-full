@@ -34,16 +34,14 @@ function App() {
   const [userData, setUserData] = useState({});
   const history = useHistory();
 
-  
+
   React.useEffect(() => {
-    console.log("effect token");
     const token = localStorage.getItem('token');
     if (token) {
       auth.getUser().then((res) => {
         setIsLoggedIn(true);
         setUserData(res);
         setCurrentUser(res);
-        console.log("effect token  " + res);
         history.push('/cards');
       }).catch(err => console.log(err));
     }
@@ -51,23 +49,20 @@ function App() {
 
   React.useEffect(() => {
     if (isLoggedIn) {
-    console.log("effect user");
-    api.getUserInfo().then(user => {
-      setCurrentUser(user);
-      setUserData(user);
-      console.log("effect user  " + user);
-    }).catch(err => console.log(err));
-  }
+      api.getUserInfo().then(user => {
+        setCurrentUser(user);
+        setUserData(user);
+      }).catch(err => console.log(err));
+    }
   }, [isLoggedIn])
 
 
   React.useEffect(() => {
     if (isLoggedIn) {
-    console.log("effect cards");
-    api.getCards().then(cards => {
-      setCards(cards);
-    }).catch(err => console.log(err));
-  }
+      api.getCards().then(cards => {
+        setCards(cards);
+      }).catch(err => console.log(err));
+    }
   }, [isLoggedIn])
 
   function handleEditAvatarClick() {
@@ -149,6 +144,11 @@ function App() {
       })
   }
 
+  function handleLogout() {
+    setIsLoggedIn(false);
+    localStorage.removeItem('token');
+  }
+
   function handleRegister(password, email) {
     auth.register(password, email)
       .then((res) => {
@@ -170,7 +170,7 @@ function App() {
   return (
     <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
-        <Header userData={userData} />
+        <Header userData={userData} handleLogout={handleLogout} />
         <div className="page__content">
 
           <Switch>

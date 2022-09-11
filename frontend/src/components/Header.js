@@ -1,15 +1,9 @@
 import React from 'react';
-import { useHistory, useLocation, Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import logoPath from '../images/logo.svg'; 
 
 function Header(props) {
-    const history = useHistory();
     const location = useLocation();
-    
-    function signOut(){
-      localStorage.removeItem('token');
-      history.push('/sign-in');
-    }
 
     function getLocation() {
         if (location.pathname === "/sign-up") {
@@ -28,7 +22,7 @@ function Header(props) {
             return (
             <div className="header__nav">
             <p className="header__userEmail">{props.userData.email}</p>
-            <button className="header__closeButton" onClick={signOut}>Выйти</button>
+            <button className="header__closeButton" onClick={props.handleLogout}>Выйти</button>
             </div>
         )}
     }
