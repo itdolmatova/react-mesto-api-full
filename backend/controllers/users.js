@@ -1,4 +1,3 @@
-const { NODE_ENV, JWT_SECRET } = process.env;
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
@@ -6,6 +5,8 @@ const { WrongDataError } = require('../errors/wrong-data-error');
 const { WrongEmailOrPasswordError } = require('../errors/wrong-email-or-password-error');
 const { NotFoundError } = require('../errors/not-found-error');
 const { EmailAlreadyExistError } = require('../errors/email-already-exist-error');
+
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 function extractUser(user) {
   const {

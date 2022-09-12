@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const { celebrate, Joi, errors } = require('celebrate');
@@ -20,7 +21,8 @@ const allowedCors = [
   'http://place4orthebeauty.dolmatova.nomoredomains.sbs',
   'http://localhost:3000',
 ];
-require('dotenv').config();
+
+console.log('Environment', process.env.NODE_ENV);
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb')
   .then(() => console.log('Database Connected'), {

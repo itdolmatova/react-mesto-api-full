@@ -1,6 +1,7 @@
-const { NODE_ENV, JWT_SECRET } = process.env;
 const jwt = require('jsonwebtoken');
 const { WrongEmailOrPasswordError } = require('../errors/wrong-email-or-password-error');
+
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 module.exports = (req, res, next) => {
   // достаём авторизационный заголовок
